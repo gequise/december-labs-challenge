@@ -6,16 +6,19 @@ export class AustinOfficePage {
   readonly scheduleButton: Locator;
   readonly scheduleModalTitleText: Locator;
   readonly scheduleModalOpen: Locator;
+  readonly scheduleModalClosed: Locator;
   readonly scheduleModalCloseButton: Locator;
+  readonly gmailIcon: Locator;
 
   constructor(page: Page) {
     this.page = page;
     this.scheduleButton = page.locator(locators.scheduleBtn);
-    this.scheduleModalTitleText = page.locator(locators.scheduleModalTitleTxt);
     this.scheduleModalOpen = page.locator(locators.scheduleModalOpn);
+    this.scheduleModalClosed = page.locator(locators.scheduleModalClos);
     this.scheduleModalCloseButton = page.locator(
       locators.scheduleModalCloseBtn
     );
+    this.gmailIcon = page.getByRole("button", { name: locators.gmailIcon });
   }
 
   async urlAustinOfficePage() {
@@ -24,10 +27,6 @@ export class AustinOfficePage {
 
   async clickOnButtonSchedule() {
     await this.scheduleButton.click();
-  }
-
-  async getModalTxt() {
-    await this.scheduleModalTitleText.innerText();
   }
 
   async clickOnCloseButtonModal() {

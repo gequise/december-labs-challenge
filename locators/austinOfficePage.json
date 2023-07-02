@@ -1,8 +1,7 @@
 {
   "scheduleBtn": "//a[@class='button transparent-button schedule-consultation launch-modal-calendar']",
-  "scheduleModalTitleTxt": "'//h3[(@class='text-medium')]'",
   "scheduleModalOpn": "//div[contains(@class, 'dl-modal') and contains(@class, 'calendar-modal') and contains(@class, 'open')]",
-  "scheduleModalCloseBtn": "//div[@class='btn-close-modal']"
+  "scheduleModalClos": "//div[contains(@class, 'dl-modal') and contains(@class, 'calendar-modal') and not(contains(@class, 'open'))]",
+  "scheduleModalCloseBtn": "//*[@class='dl-modal calendar-modal open']//*[@class='dl-modal-content']//*[@class='btn-close-modal']",
+  "gmailIcon": "Get instant calendaring for free"
 }
-
-// getByRole('button', { name: 'Get instant calendaring for free' })

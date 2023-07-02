@@ -13,8 +13,12 @@ test.describe("Austin Office Page tests", () => {
 
   test("First Test.", async () => {
     await austinOfficePageDev.clickOnButtonSchedule();
-    const modalTxt = await austinOfficePageDev.getModalTxt();
-    console.log("modalText", modalTxt);
-    // await austinOfficePageDev.clickOnCloseButtonModal();
+    const modalOpen = austinOfficePageDev.scheduleModalOpen;
+    const modalIsVisible = await modalOpen.isVisible();
+    expect(modalIsVisible).toBeTruthy();
+    await austinOfficePageDev.clickOnCloseButtonModal();
+    const modalClosed = austinOfficePageDev.scheduleModalClosed;
+    const modalNotVisible = await modalClosed.isVisible();
+    expect(modalNotVisible).toBeFalsy();
   });
 });
