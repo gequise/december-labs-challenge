@@ -19,6 +19,8 @@ export class HomePage {
   }
 
   async clickOnAustinOffice() {
-    return await this.austinOfficeLink.click();
+    await this.austinOfficeLink.click();
+    await this.page.waitForLoadState("domcontentloaded");
+    await this.page.waitForLoadState("networkidle");
   }
 }
